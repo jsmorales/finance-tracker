@@ -17,7 +17,7 @@ class StocksController < ApplicationController
 			#se renderiza una vista parcial llamada lookup
 			render partial: 'lookup'
 			#muestra en json esto equilave a un printr en php
-			render json: @stock
+			#render json: @stock
 		else
 			#
 			render status: :not_found, nothing: true
