@@ -15,3 +15,23 @@
 //= require twitter/bootstrap
 //= require turbolinks
 //= require_tree .
+
+var show_spinner = function(selector){
+	$("#"+selector).show('slow');
+}
+
+var hide_spinner = function(selector){
+	$("#"+selector).hide('slow');
+}
+
+function rotar(selector){
+	
+	var angle = 0;
+
+	setInterval(function(){
+		angle+=3;
+		$("#"+selector).rotate(angle);
+	},50);
+}
+
+rotar("load-spin");

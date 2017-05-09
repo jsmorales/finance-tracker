@@ -5,6 +5,14 @@ var init_stock_lookup = function(){
 
 	console.log($("#stock-lookup-form"))
 
+	$("#stock-lookup-form").on('ajax:before', function(event, data, status){
+		show_spinner("spinner");
+	})
+
+	$("#stock-lookup-form").on('ajax:complete', function(event, data, status){
+		hide_spinner("spinner");
+	})
+
 	$("#stock-lookup-form").on('ajax:success',function(event, data, status){
 
 		//dentro del div del formulario se hace:

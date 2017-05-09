@@ -4,6 +4,10 @@
 #esto debe funcionar en la consola rails
 
 class Stock < ApplicationRecord
+
+	has_many :user_stocks
+	has_many :users, through: :user_stocks
+
 	#este metodo retorna una busqueda en la bd de un registro
 	#con ticker segun la variable que se le pase
 	def self.find_by_ticker(ticker_symbol)
